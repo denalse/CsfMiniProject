@@ -1,0 +1,45 @@
+<div class="alistContactDiv">
+    
+    <form [formGroup]="form">
+
+
+        <div class="row" style="margin-left: 1px;">
+            List of Contacts
+        </div>
+        <table class="table table-bordered" [formGroup]="form">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Mobile
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let x of updatedContacts; let i = index"  > <!--[formGroup]="x"-->
+                    <td >
+                        {{ x.name }}
+                    </td>
+                    <td>
+                        {{ x.email }}
+                    </td>
+                    <td>
+                        {{ x.mobile }}
+                    </td>
+                    <td>
+                        <button class="xBtn" type="button" (click)="removeItem(i)">
+                            X
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </form>
+
+</div>

@@ -1,0 +1,53 @@
+>>>> In Controller >>>>
+
+
+// @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE )
+    // public ResponseEntity<String> createContact(@RequestBody String payload) {
+
+    //     Contacts contacts;
+    //     Response resp;
+
+    //     logger.info("Payload: %s".formatted(payload));
+
+    //     try {
+    //         contacts = Contacts.create(payload);
+    //     } catch(Exception ex) {
+    //         resp = new Response();
+    //         resp.setCode(400);
+    //         resp.setMessage(ex.getMessage());
+
+    //         return ResponseEntity
+    //             .status(HttpStatus.BAD_REQUEST)
+    //             .body(resp.toJson().toString());
+
+    //     }
+
+    //     resp = new Response();
+    //     resp.setCode(201);
+    //     resp.setMessage("abc");
+    //     resp.setData(contacts.toJson().toString());
+
+        
+
+    //     return ResponseEntity
+    //         .status(HttpStatus.CREATED)
+    //         .body(resp.toJson().toString());
+    // }
+
+___________________________________________________________________________
+
+//contactModel
+
+ public static Contacts createSql(SqlRowSet rs) {
+        Contacts contactList = new ArrayList<Contacts>();
+        while(rs.next()){
+            Contacts newContact = new Contacts();
+            newContact.setName(rs.getString("name"));
+            newContact.setEmail(rs.getString("email"));
+            newContact.setMobile(rs.getString("mobile"));
+            contactList.add(newContact);
+        }
+        return contactList;
+    }
+___________________________________________________________________________
+

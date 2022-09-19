@@ -1,0 +1,14 @@
+
+#addContactDiv {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
+}
+
+.top {
+    text-align: center;
+}
+
+label {
+    float:left
+}

@@ -1,0 +1,31 @@
+<div id="addContactDiv" >
+        <form [formGroup]="form" (ngSubmit)="processContact()">
+        <div class="form-outline mb-2 top">
+            Add a Contact
+        </div>
+        <div class="form-outline mb-3">
+              <!-- Name input -->
+            <label>Name: </label>
+            <input class="ms-1" type="text" formControlName="name">
+        </div>
+        
+        <div class="form-outline mb-3">
+              <!-- Email input -->
+            <label>Email: </label>
+            <input class="ms-1" type="email" formControlName="email">
+        </div>
+        <div>
+              <!-- Mobile input -->
+            <label>Mobile: </label>
+            <input class="ms-1" type="tel" formControlName="mobile">
+        </div>
+        <br>
+        <div class = "col-md-12 bg-light text-right top" >
+            <button type="submit" class="btn btn-primary" 
+            >
+            Add
+        </button>
+        </div>
+    </form>
+</div>
+

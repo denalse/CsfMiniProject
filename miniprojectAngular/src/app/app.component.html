@@ -1,0 +1,13 @@
+
+<h1 class="mt-4">The Contact Form</h1>
+
+<div class="buttonApp">
+    <button class="btn btn-outline-secondary ms-1" (click)="toggleShowApp('Add')">Add</button>
+    <button id="btnClear" class="btn btn-outline-secondary" (click)="toggleShowApp('List')">List</button>
+</div>
+
+<app-add  [hidden]="componentType == 'List'" (onNewContact)="processNewContact($event)" 
+    (contactListUpdated)="updateListComponent()"></app-add>
+
+<app-list [hidden]="componentType == 'Add'" [updatedContacts]="contactList"></app-list>
+
